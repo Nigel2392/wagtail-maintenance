@@ -2,25 +2,18 @@
 
 {% load i18n wagtailadmin_tags static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "maintenance/admin/maintenance.css" %}"/>
+{% endblock %}
+
 {% block main_content %}
-    <script>
+    <script type="text/javascript">
         if (!window.maintenanceMode) {
             window.maintenanceMode = {};
         }
         window.maintenanceMode.skipInsertStyle = true;
         window.maintenanceMode.skipRemoveStyle = false;
     </script>
-    <style>
-        .maintenance-mode-form-wrapper {
-            max-width: 1200px;
-        }
-        .maintenance-mode-form > * {
-            margin-bottom: 0.5em;
-        }
-        p.literal-breaks {
-            white-space: pre-line;
-        }
-    </style>
 
     <div class="maintenance-mode-form-wrapper nice-padding">
         <div class="help-block help-info">

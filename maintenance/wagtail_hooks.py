@@ -1,13 +1,13 @@
 
 from typing import Any
-from django.views.generic import View
 from django.http import HttpResponse
 from django.shortcuts import redirect
-from django.utils.html import format_html
 from django.urls import path, reverse, include
+from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import Permission
 from django.core.exceptions import PermissionDenied
+from django.contrib.auth.models import Permission
+from django.views.generic import View
 
 from wagtail import hooks
 from wagtail.admin.views.generic.base import WagtailAdminTemplateMixin

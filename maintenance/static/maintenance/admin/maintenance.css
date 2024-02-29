@@ -1,0 +1,9 @@
+.maintenance-mode-form-wrapper {
+    max-width: 1200px;
+}
+.maintenance-mode-form > * {
+    margin-bottom: 0.5em;
+}
+p.literal-breaks {
+    white-space: pre-line;
+}
