@@ -1,0 +1,63 @@
+{% extends "wagtailadmin/generic/base.html" %}
+
+{% load i18n wagtailadmin_tags static %}
+
+{% block main_content %}
+    <script>
+        if (!window.maintenanceMode) {
+            window.maintenanceMode = {};
+        }
+        window.maintenanceMode.skipInsertStyle = true;
+        window.maintenanceMode.skipRemoveStyle = false;
+    </script>
+    <style>
+        .maintenance-mode-form-wrapper {
+            max-width: 1200px;
+        }
+        .maintenance-mode-form > * {
+            margin-bottom: 0.5em;
+        }
+        p.literal-breaks {
+            white-space: pre-line;
+        }
+    </style>
+
+    <div class="maintenance-mode-form-wrapper nice-padding">
+        <div class="help-block help-info">
+            {% icon name="help" %}
+            <p>{% translate "Once activating maintenance mode the site will be unavailable." %}</p>
+        </div>
+
+        <div class="maintenance-mode-form-header">
+            <h2><strong>{% translate "Maintenance mode" %}</strong></h2>
+            <p class="literal-breaks">{%spaceless%}
+                {% translate "Maintenance mode is only to be used when the site should not be publicly accessible." %}
+                {% translate "It will lock users out of being able to any pages, except pages in the admin site." %}
+                {% translate "These pages will remain available for administration purposes." %}
+                {% translate "There are different maintenance modes based on the type of work that is to be done." %}
+            {% endspaceless %}</p>
+        </div>
+
+        <form class="maintenance-mode-form" method="POST" action="{% url "admin_maintenance:modes" %}">
+            <h3>{% translate "Select" %}</h3>
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="formn-field{% if field.errors %} error{% endif %}">
+                    {% for error in field.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
+                    {{ field }}
+                    <label for="{{ field.id_for_label }}"><strong>{{ field.label }}</strong></label>
+                    {% if field.help_text %}
+                        <p class="help">{{ field.help_text|safe }}</p>
+                    {% endif %}
+                    <hr>
+                </div>
+            {% endfor %}
+            <button type="submit" value="submit" class="button">{% translate "Submit" %}</button>
+        </form>
+    </div>
+
+{% endblock %}
+        

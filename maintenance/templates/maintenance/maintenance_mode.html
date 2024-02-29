@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load i18n static maintenance_tags %}
+<html lang="{{request.LANGUAGE_CODE}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">{% if refresh %}
+    <meta http-equiv="refresh" content="{{refresh}}">{% endif %}
+    <title>{% translate "Maintenance" %}</title>
+    <link rel="stylesheet" href="{% static 'maintenance/css/maintenance.css' %}">
+</head>
+<body>
+    <div class="maintenance-mode">
+        {% block content %}
+            <main class="maintenance-mode-content">
+                <div class="emoji-display-container">
+                    <div class="emoji-display right-side">
+                        <div class="emoji-display-emoji">
+                            {% block icon %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="icon" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                    <path d="M4.285 12.433a.5.5 0 0 0 .683-.183A3.5 3.5 0 0 1 8 10.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.5 4.5 0 0 0 8 9.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5"/>
+                                </svg>
+                            {% endblock %}
+                        </div>
+                        <div class="emoji-display-text">
+                            <h1>{% translate "We are sorry" %}</h1>
+                            <p>{% translate "The site is currently undergoing maintenance, we will be back shortly." %}</p>
+                            {% url "wagtailadmin_home" as wagtailadmin_home %}
+                            {% if request.path|startswith:wagtailadmin_home %} {# and "maintenance.toggle_maintenance_mode" in perms %}#}
+                                <small>{% translate "<strong>If you are authorized</strong>, you can deactivate the maintenance mode." %}</small><br>
+                                <small><em>{% translate "Do be careful - it is likely on for a reason and will deactive shortly." %}</em></small>
+                                <div class="buttons">
+                                    <a href="{% url "admin_maintenance:modes" %}" class="button button-primary">{% translate "Deactivate" %}</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </main>
+        {% endblock %}
+    </div>
+    <script src="{% url "maintenance:script" %}" type="text/javascript"></script>
+</body>
+</html>

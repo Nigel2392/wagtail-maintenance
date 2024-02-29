@@ -1,0 +1,7 @@
+include LICENSE
+include README.md
+recursive-include maintenance/static *
+recursive-include maintenance/templates *
+recursive-include maintenance/locale *
+recursive-include maintenance/migrations *
+recursive-include maintenance/templatetags *

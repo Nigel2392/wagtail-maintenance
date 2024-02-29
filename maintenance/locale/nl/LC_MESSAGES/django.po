@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-29 09:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\application\maintenance\keys.py:135
+msgid "General Maintenance Mode"
+msgstr "Algemene onderhoudsmodus"
+
+#: .\application\maintenance\keys.py:136
+msgid "Enable general maintenance mode"
+msgstr "Zet algemene onderhoudsmodus aan"
+
+#: .\application\maintenance\middleware.py:73
+#: .\application\maintenance\views.py:43
+msgid "The site is currently in maintenance mode. Please try again later."
+msgstr "De site is momenteel in onderhoud, probeer het later opnieuw."
+
+#: .\application\maintenance\models.py:7
+msgid "Maintenance Permission Model"
+msgstr "Onederhoudspermissiemodel"
+
+#: .\application\maintenance\models.py:8
+msgid "Maintenance Permission Models"
+msgstr "Onderhoudspermissiemodellen"
+
+#: .\application\maintenance\models.py:13
+msgid "Can toggle maintenance mode"
+msgstr "Mag onderhoudsmodus in- en uitschakelen"
+
+#: .\application\maintenance\models.py:14
+msgid "Can see menu item"
+msgstr "Mag menu-item zien"
+
+#: .\application\maintenance\models.py:15
+msgid "Can see maintenance info"
+msgstr "Mag onderhoudsinformatie zien"
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode.html:9
+msgid "Maintenance"
+msgstr "Onderhoud"
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode.html:27
+msgid "We are sorry"
+msgstr "Het spijt ons"
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode.html:28
+msgid "The site is currently undergoing maintenance, we will be back shortly."
+msgstr "De site is momenteel in onderhoud, wij zijn zo snel mogelijk terug."
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode.html:31
+msgid ""
+"<strong>If you are authorized</strong>, you can deactivate the maintenance "
+"mode."
+msgstr ""
+"<strong>Als u geautoriseerd bent</strong>, kunt u de onderhoudsmodus "
+"deactiveren."
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode.html:32
+msgid "Do be careful - it is likely on for a reason and will deactive shortly."
+msgstr ""
+"Wees voorzichtig - het staat waarschijnlijk aan voor een reden en zal "
+"binnenkort deactiveren."
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode.html:34
+msgid "Deactivate"
+msgstr "Deactiveren"
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode_admin.html:28
+msgid "Once activating maintenance mode the site will be unavailable."
+msgstr ""
+"Wanneer de onderhoudsmodus wordt geactiveerd, is de site niet beschikbaar."
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode_admin.html:32
+msgid "Maintenance mode"
+msgstr "Onderhoudsmodus"
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode_admin.html:34
+msgid ""
+"Maintenance mode is only to be used when the site should not be publicly "
+"accessible."
+msgstr ""
+"Onderhoudsmodus moet alleen worden gebruikt wanneer de site niet "
+"publiekelijk toegankelijk mag zijn."
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode_admin.html:35
+msgid ""
+"It will lock users out of being able to any pages, except pages in the admin "
+"site."
+msgstr ""
+"Het zal gebruikers uitsluiten van het kunnen van pagina's, behalve pagina's "
+"in de beheerder- site."
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode_admin.html:36
+msgid "These pages will remain available for administration purposes."
+msgstr "Deze pagina's blijven beschikbaar voor administratieve doeleinden."
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode_admin.html:37
+msgid ""
+"There are different maintenance modes based on the type of work that is to "
+"be done."
+msgstr ""
+"Er zijn verschillende onderhoudsmodi op basis van het type werk dat moet "
+"worden gedaan."
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode_admin.html:42
+msgid "Select"
+msgstr "Selecteer"
+
+#: .\application\maintenance\templates\maintenance\maintenance_mode_admin.html:58
+msgid "Submit"
+msgstr "Verzenden"
+
+#: .\application\maintenance\wagtail_hooks.py:173
+#: .\application\maintenance\wagtail_hooks.py:217
+msgid "Maintenance Mode"
+msgstr "Onderhoudsmodus"
+
+#: .\application\maintenance\wagtail_hooks.py:174
+msgid "Configure maintenance mode"
+msgstr "Onderhoudsmodus configureren"

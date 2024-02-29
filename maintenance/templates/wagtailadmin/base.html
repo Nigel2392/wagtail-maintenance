@@ -1,0 +1,8 @@
+{% extends "wagtailadmin/base.html" %}
+
+{% load maintenance_tags %}
+
+{% block extra_js %}
+    <script src="{% url "admin_maintenance:script" %}"></script>
+    {{ block.super }}
+{% endblock %}
