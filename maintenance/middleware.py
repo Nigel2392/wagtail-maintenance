@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from django.http import JsonResponse
 from django.conf import settings
 
-from wagtail import hooks
+# from wagtail import hooks
 from . import modes
 from .settings import (
     REFRESH_DELAY,
@@ -24,8 +24,8 @@ class MaintenanceModeMiddleware:
             hasattr(request, "is_preview") and request.is_preview,
 
             # Wagtailadmin
-            path_lower.startswith(f"{reverse('wagtailadmin_home')}/js"),
-            path_lower.startswith(f"{reverse('wagtailadmin_home')}/sprite"),
+            path_lower.startswith(f"{reverse('wagtailadmin_home')}jsi18n/"),
+            path_lower.startswith(f"{reverse('wagtailadmin_home')}sprite-"),
 
             # Admin facing (required for maintenance mode to work)
             path_lower.startswith(reverse("admin_maintenance:ping").lower()),
